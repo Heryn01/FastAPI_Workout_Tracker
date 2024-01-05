@@ -19,3 +19,6 @@ class User(BaseModel):
     twilight_team: Optional[Twilight] = None
     role: List[Role]
     
+class HTTPException(BaseModel):
+    detail: str
+    error_code: Optional[str]
