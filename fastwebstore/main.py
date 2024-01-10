@@ -1,11 +1,14 @@
-from typing import Union, List
-from uuid import uuid4
 from fastapi import FastAPI
-import json
-from fastwebstore.models import User, Role
-from fastwebstore.route_handler import router 
+
+from fastwebstore.route_handler import router
+from fastwebstore.database import Base, engine
+import users.models
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title='projectnamehere', root_path="/api/v1")
+
+#add all subdomain routes from the route handler
 app.include_router(router)
 
 
