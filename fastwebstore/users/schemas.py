@@ -1,7 +1,15 @@
-from pydantic import BaseModel, SecretStr, EmailStr
+from pydantic import BaseModel, EmailStr, SecretStr
+
 
 class UserBase(BaseModel):
     username: str
-    name: str | None
     email: EmailStr
+
+
+class UserCreate(UserBase):
+    name: str | None
     password: SecretStr
+
+
+class User(UserBase):
+    id: int
