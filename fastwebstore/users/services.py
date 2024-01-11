@@ -21,9 +21,7 @@ def create_user(
         if get_user_by_username(db, user.email):
             raise HTTPException(status_code=400, detail="Email already taken")
         if get_user_by_mail(db, user.email):
-            raise HTTPException(
-                status_code=400, detail="Username already taken"
-            )
+            raise HTTPException(status_code=400, detail="Username already taken")
     db.add(db_user)
     db.commit()
     db.refresh(db_user)

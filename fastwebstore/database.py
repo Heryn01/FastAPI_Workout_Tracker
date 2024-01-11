@@ -6,14 +6,15 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 load_dotenv()
+RDB_DIALECT = os.environ.get("RDB_DIALECT")
+DB_USER = os.environ.get("DB_USER")
+DB_PASS = os.environ.get("DB_PASS")
+DB_IP = os.environ.get("DB_IP")
+DB_PORT = os.environ.get("DB_PORT")
+DB_NAME = os.environ.get("DB_NAME")
 
-POSTGRES_USER = os.environ.get("POSTGRES_USER")
-POSTGRES_PASS = os.environ.get("POSTGRES_PASS")
-POSTGRES_IP = os.environ.get("POSTGRES_IP")
-POSTGRES_PORT = os.environ.get("POSTGRES_PORT")
-
-URL_DATABASE = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASS}@{POSTGRES_IP}: \
-    {POSTGRES_PORT}/FastAPIWebstore"
+URL_DATABASE = f"{RDB_DIALECT}://{DB_USER}:{DB_PASS}@{DB_IP}: \
+    {DB_PORT}/{DB_NAME}"
 
 engine = create_engine(URL_DATABASE)
 
