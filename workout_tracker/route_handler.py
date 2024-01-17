@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from fastwebstore.auth.views import router as auth_router
-from fastwebstore.users.views import router as users_router
+from workout_tracker.auth.views import router as auth_router
+from workout_tracker.users.views import router as users_router
 
 sub_router = APIRouter()
 routes = [

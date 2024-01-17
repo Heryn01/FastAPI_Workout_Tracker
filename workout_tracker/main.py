@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 
-from fastwebstore.route_handler import router
+from workout_tracker.route_handler import router
 
 app = FastAPI(title="projectnamehere", root_path="/api/v1")
 

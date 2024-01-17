@@ -1,10 +1,9 @@
 from typing import Annotated
 
+from database import get_db
 from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-
-from database import get_db
 from users.schemas import UserBase
 
 router = APIRouter(

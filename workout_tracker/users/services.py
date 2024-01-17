@@ -1,10 +1,9 @@
 from typing import Annotated
 
-from fastapi import Depends, HTTPException
-from sqlalchemy.orm import Session
-
 import users.models
 import users.schemas
+from fastapi import Depends, HTTPException
+from sqlalchemy.orm import Session
 
 
 def create_user(

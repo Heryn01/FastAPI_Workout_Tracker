@@ -1,6 +1,5 @@
-from sqlalchemy import Column, Integer, String
-
 from database import Base, engine
+from sqlalchemy import Column, Integer, String
 
 
 class UserBase(Base):

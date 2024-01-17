@@ -1,16 +1,12 @@
 from typing import Annotated
 
+import users
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+from users.services import (create_user, get_all_users, get_user_by_mail,
+                            get_user_by_username)
 
-import users
-from fastwebstore.database import get_db
-from users.services import (
-    create_user,
-    get_all_users,
-    get_user_by_mail,
-    get_user_by_username,
-)
+from workout_tracker.database import get_db
 
 router = APIRouter()
 

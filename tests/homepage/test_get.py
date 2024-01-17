@@ -1,8 +1,6 @@
-from fastwebstore.main import app
-from fastwebstore.main import user_db
-
-from fastapi import FastAPI
 from fastapi.testclient import TestClient
+
+from workout_tracker.main import app
 
 client = TestClient(app)
 
