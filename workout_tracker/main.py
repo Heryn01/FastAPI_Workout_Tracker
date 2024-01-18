@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 from workout_tracker.route_handler import router
 
-app = FastAPI(title="projectnamehere", root_path="/api/v1")
+app = FastAPI(title="workout_tracker", root_path="/api/v1")
 
 # add all subdomain routes from the route handler
 app.include_router(router)
